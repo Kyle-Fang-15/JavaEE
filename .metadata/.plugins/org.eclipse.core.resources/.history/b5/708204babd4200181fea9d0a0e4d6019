@@ -1,0 +1,14 @@
+<html>
+
+
+
+<body>
+<h3>
+hello world java balalaba
+</h3>
+The time at California is <%=new java.util.Date() %>
+
+</body>
+
+
+</html>

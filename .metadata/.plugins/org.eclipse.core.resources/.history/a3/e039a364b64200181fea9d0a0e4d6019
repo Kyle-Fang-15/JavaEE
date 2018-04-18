@@ -1,0 +1,4 @@
+<html>
+
+<body>
+Converting a stirng to uppercase:<%=new String("helloeve v").toUpperCase() %></body></html>
