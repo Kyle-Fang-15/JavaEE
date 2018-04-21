@@ -1,3 +1,7 @@
 INDEX VERSION 1.130
 /Users/yuankanfang/Documents/JavaEE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/397597023.index
 /jspdemo/src
+/Users/yuankanfang/Documents/JavaEE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4170143903.index
+/tagdemo/src
+/Users/yuankanfang/Documents/JavaEE/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/411493201.index
+/servletdemo/src
