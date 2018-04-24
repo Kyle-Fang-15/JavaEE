@@ -3,4 +3,5 @@
   <module moduleId="org.eclipse.jst.jee.server:tagdemo" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:servletdemo" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:jspdemo" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:web-student-track" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
