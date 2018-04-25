@@ -111,6 +111,41 @@ public class StudentDBUtil {
 		 
 		
 	}
+
+	public Student getStudent(String theStudentId) throws Exception {
+		// TODO Auto-generated method stub
+		Student theStudent=null;
+		Connection myConn=null;
+		PreparedStatement myStmt=null;
+		ResultSet myRs=null;
+		int studentId;
+		try {
+			studentId=Integer.parseInt(theStudentId);
+			myConn=dataSource.getConnection();
+			String sql="SELECT * FROM student WHERE id=?";
+			myStmt=myConn.prepareStatement(sql);
+			myStmt.setInt(1, studentId);
+			myRs=myStmt.executeQuery();
+			
+			if (myRs.next()) {
+				String firstName=myRs.getString("first_name");
+				String lastName=myRs.getString("last_name");
+				String email=myRs.getString("email");
+				theStudent=new Student(studentId, firstName, lastName, email);
+			}else {
+				throw new Exception("can not find student ID "+ studentId);
+			}
+			
+			
+			
+			return theStudent;
+			
+		}
+		finally {
+			close(myConn, myStmt, myRs);
+		}
+		
+	}
 	
 	
 

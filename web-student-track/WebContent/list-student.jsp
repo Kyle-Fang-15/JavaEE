@@ -35,14 +35,19 @@ class="add-student-button" />
 <th>First Name</th>
 <th>Last Name</th>
 <th>Email</th>
+<th>Action</th>
 </tr>
 <c:forEach var="temp" items="${STUDENT_LIST }">
 	
-	
+<c:url var="tempLink" value="StudentControllerServlet">
+<c:param name="command" value="LOAD" />
+<c:param name="studentId" value="${temp.id }" />
+</c:url>
 	<tr>
 	<td>${temp.firstName}</td>
 	<td>${temp.lastName}</td>
 	<td>${temp.email}</td>
+	<td><a href="${tempLink }">Update</a> </td>
 	</tr>
 
 </c:forEach>

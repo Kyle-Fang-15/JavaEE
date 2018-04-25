@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<title>UPDATE STUDENT</title>
+<title>Update Student Form</title>
 
 <link type="text/css" rel="stylesheet" href="css/style.css">
 <link type="text/css" rel="stylesheet" href="css/add-student-style.css">
@@ -16,7 +16,7 @@
 
 <div id="wrapper">
 <div id="header">
-<h2>UCSD Add Student Form</h2>
+<h2>Update Student Form</h2>
 </div>
 </div>
 
@@ -24,7 +24,6 @@
 <h3>Update Student</h3>
 <form action="StudentControllerServlet" method="GET">
 <input type="hidden" name="command" value="UPDATE" />
-<input type="hidden" name="studentId" value="${THE_STUDENT.id}" />
 <table>
 <tbody>
 <tr>
