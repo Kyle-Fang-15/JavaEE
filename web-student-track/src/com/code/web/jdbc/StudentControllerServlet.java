@@ -58,6 +58,13 @@ public class StudentControllerServlet extends HttpServlet {
 				break;
 			case "LOAD":
 				loadStudent(request,response);
+				break;
+			case "UPDATE":
+				updateStudent(request,response);
+				break;
+			case "DELETE":
+				deleteStudent(request, response);
+					break;
 			default:
 				listStudents(request, response);
 			
@@ -69,6 +76,32 @@ public class StudentControllerServlet extends HttpServlet {
 		}
 	
 	
+	}
+
+
+	private void deleteStudent(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		int id=Integer.parseInt(request.getParameter("studentId"));
+		studentDBUtil.deleteStudent(id);
+		listStudents(request, response);
+		
+	}
+
+
+	private void updateStudent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		int id=Integer.parseInt(request.getParameter("studentId"));
+		String firstName=request.getParameter("firstname");
+		String lastName=request.getParameter("lastname");
+		String email=request.getParameter("email");
+		
+		Student theStudent=new Student(id, firstName, lastName, email);
+		
+		studentDBUtil.updateStudent(theStudent);
+		
+		listStudents(request, response);
+		
+		
+		
 	}
 
 

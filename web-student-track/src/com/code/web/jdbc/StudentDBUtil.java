@@ -146,7 +146,54 @@ public class StudentDBUtil {
 		}
 		
 	}
-	
-	
 
+	public void updateStudent(Student theStudent) throws Exception{
+		
+		Connection myConn=null;
+		PreparedStatement myStmt=null;
+		
+		
+		try {
+		myConn=dataSource.getConnection();
+		String sql="update student "
+				+"set first_name=?, last_name=?, email=? where id=?;";
+		
+		myStmt=myConn.prepareStatement(sql);
+		
+		myStmt.setString(1, theStudent.getFirstName());
+		myStmt.setString(2, theStudent.getLastName());
+		myStmt.setString(3, theStudent.getEmail());
+		myStmt.setInt(4, theStudent.getId());
+		
+		myStmt.execute();
+		}
+		finally {
+			
+			close(myConn, myStmt, null);
+		}
+		
+
+	}
+
+	public void deleteStudent(int id) throws Exception{
+		Connection myConn=null;
+		PreparedStatement myStmt=null;
+		
+		try {
+			myConn =dataSource.getConnection();
+			
+			String sql="delete from student where id=?;";
+			
+			myStmt=myConn.prepareStatement(sql);
+			myStmt.setInt(1, id);
+			
+			myStmt.execute();
+			
+			
+		}
+		finally {
+			close(myConn, myStmt, null);
+		}
+		
+	}
 }

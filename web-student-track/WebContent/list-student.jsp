@@ -43,11 +43,25 @@ class="add-student-button" />
 <c:param name="command" value="LOAD" />
 <c:param name="studentId" value="${temp.id }" />
 </c:url>
+
+<c:url var="deleteLink" value="StudentControllerServlet">
+<c:param name="command" value="DELETE" />
+<c:param name="studentId" value="${temp.id }" />
+</c:url>
+
+
 	<tr>
 	<td>${temp.firstName}</td>
 	<td>${temp.lastName}</td>
 	<td>${temp.email}</td>
-	<td><a href="${tempLink }">Update</a> </td>
+	<td>
+	<a href="${tempLink }">Update</a>
+	|
+	<a href="${deleteLink }" onclick="if (!(confirm('Are you sure you want to delete this student?'))) return false">Delete</a>
+	
+	
+	 </td>
+	
 	</tr>
 
 </c:forEach>
